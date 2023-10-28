@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* header */
+
+header {
+  text-align: center;
+  padding: 32px 0;
+  /* border-bottom: 4px solid blue; */
+  background-image: url(train.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+header p {
+  font-weight: bold;
+}
+
+/* main */
+
+main {
+  width: calc(100% - 64px);
+  margin: 64px auto;
+}
+
+main section {
+  text-align: center;
+}
+
+main section + section {
+  margin-top: 64px;
+}
+
+main section .omikuji {
+  border: 4px double red;
+}
+
+main section .omikuji h2 {
+  border-bottom: 2px solid red;
+  padding: 16px 0;
+  font-size: 48px;
+}
+
+
+main section .omikuji p {
+  font-size: 64px;
+  padding: 32px 0;
+}
+
+main section button {
+  all: unset;
+  width: 160px;
+  background: red;
+  color: white;
+  margin-top: 32px;
+  padding: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px gray;
+}
+
+main section button:hover {
+  opacity: .7;
+}
+
+main section button:active {
+  transform: translate(0, 4px);
+  box-shadow: 0 0;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: flex;
+    gap: 32px;
+  }
+
+  main section + section {
+    margin-top: 0;
+  }
+
+  main section {
+    flex: 1;
+  }
+}
