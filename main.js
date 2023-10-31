@@ -1,14 +1,9 @@
 'use strict';
 
 {
- const btn1 = document.querySelector('#btn-1');
- const result1 = document.querySelector('#result-1');
- const btn2 = document.querySelector('#btn-2');
- const result2 = document.querySelector('#result-2');
- const btn3 = document.querySelector('#btn-3');
- const result3 = document.querySelector('#result-3');
+ const btns = document.querySelectorAll('.btn');
+ const results = document.querySelectorAll('.result');
 
-//  const p = document.querySelectorAll('main section p');
 
  const tokyoStations = [
   '新宿駅',
@@ -16,9 +11,9 @@
   '渋谷駅',
   '上野駅',
   '池袋駅',
-  '東京ディズニーランド駅',
   '大手町駅',
   '有楽町駅',
+  '東京ディズニーランド駅',
  ];
 
  const kanagawaStations = [
@@ -41,40 +36,34 @@
   '久喜駅',
  ];
 
- btn1.addEventListener('click', () => {
-  result1.textContent = tokyoStations[Math.floor(Math.random() * tokyoStations.length)];
-  if (result1.textContent.length >= 6) {
-    result1.style.fontSize = '32px';
-    result1.style.padding = '56px 0';
-   } else {
-    result1.style.fontSize = '64px';
-    result1.style.padding = '32px 0';
-   }
- });
+btns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    let station;
 
- btn2.addEventListener('click', () => {
-  result2.textContent = kanagawaStations[Math.floor(Math.random() * kanagawaStations.length)];
-  if (result2.textContent.length >= 6) {
-    result2.style.fontSize = '32px';
-    result2.style.padding = '56px 0';
-   } else {
-    result2.style.fontSize = '64px';
-    result2.style.padding = '32px 0';
-   }
- });
+    switch (index) {
+      case 0:
+        station = tokyoStations[Math.floor(Math.random() * tokyoStations.length)];
+      break;
+      case 1:
+        station = kanagawaStations[Math.floor(Math.random() * kanagawaStations.length)];
+      break;
+      case 2:
+        station = saitamaStations[Math.floor(Math.random() * saitamaStations.length)];
+      break;
+    }
 
- btn3.addEventListener('click', () => {
-  result3.textContent = saitamaStations[Math.floor(Math.random() * saitamaStations.length)];
-  if (result3.textContent.length >= 6) {
-    result3.style.fontSize = '32px';
-    result3.style.padding = '56px 0';
-   } else {
-    result3.style.fontSize = '64px';
-    result3.style.padding = '32px 0';
-   }
- });
+    results[index].textContent = station;
 
- 
+    if (results[index].textContent.length >= 6) {
+      results[index].style.fontSize = '32px';
+      results[index].style.padding = '56px 0';
+     } else {
+      results[index].style.fontSize = '64px';
+      results[index].style.padding = '32px 0';
+     }
+  });
+});
+
 }
 
 
